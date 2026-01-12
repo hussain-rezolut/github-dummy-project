@@ -1,0 +1,19 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: my-next-app
+spec:
+  replicas: 2
+  selector:
+    matchLabels:
+      app: my-next-app
+  template:
+    metadata:
+      labels:
+        app: my-next-app
+    spec:
+      containers:
+        - name: nextjs
+          image: hussain0305/my-next-app:latest
+          ports:
+            - containerPort: 3000
